@@ -40,6 +40,7 @@ async function onSearch(e) {
     const res = await pixabayApiService.fetchPictures();
 
     if (res.hits.length === 0) {
+      loadMoreBtn.hide();
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.',
       );
